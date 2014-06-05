@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_player_in_out">Thursday Attendance</string>
+    <string name="app_player_connected">Connected to the internet</string>
     <string name="app_name">ChessNuggets</string>
     <string name="app_help_faq">FAQ HELP</string>
     <string name="app_search_player">SEARCH PLAYER</string>
@@ -18,11 +19,11 @@
            te betalen voor de berichten die je stuurt om in contact te blijven met je vrienden.P</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="action_user_info">Enter</string>
-    <string name="action_user_hint_FN">Enter First Name</string>
-    <string name="action_user_hint_LN">Enter Last Name</string>
+    <string name="action_user_info">Login</string>
+    <string name="action_user_hint_Id">Enter Your Id</string>
+    <string name="action_user_hint_Secret">Enter Secret Key</string>
     <string name="btn_help_name">FAQ/HELP</string>
-    <string name="btn_sync_name">SYNC DATE</string>
+    <string name="btn_sync_name">SYNC DATA</string>
     <string name="btn_tournament_name">TOURNAMENT</string>
     <string name="btn_searchPlayer_name">SEARCH PLAYER</string>
     <string name="btn_profile_name">PROFILE</string>

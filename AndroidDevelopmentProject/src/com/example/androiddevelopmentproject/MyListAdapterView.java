@@ -38,7 +38,7 @@ public class MyListAdapterView extends ArrayAdapter<Player> {
 		fullName.setText(player.getFirstName()+" "+player.getLastName());
 		
 		TextView rating = (TextView) itemView.findViewById(R.id.textViewPlayerRating);
-		rating.setText(player.getRating()+"");
+		rating.setText(player.getCurrentRating()+"");
 		
 		// chance of winning
 		TextView playerWinChance = (TextView) itemView.findViewById(R.id.textViewPlayerWinChance);

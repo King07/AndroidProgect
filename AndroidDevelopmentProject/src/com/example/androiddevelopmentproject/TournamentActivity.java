@@ -2,17 +2,25 @@ package com.example.androiddevelopmentproject;
 
 
 
+import java.util.ArrayList;
+
 import android.app.ActionBar;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 public class TournamentActivity extends FragmentActivity implements TabListener{
-	
-	
+	 ArrayList<Player> PlayerList;
+	 Player appUser ;
 	 private ActionBar actionBar;
 	    private ViewPager viewPager;
 	    private TabsPagerAdapter mAdapter;
@@ -26,6 +34,9 @@ public class TournamentActivity extends FragmentActivity implements TabListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tournament_pager);
 		
+		PlayerList =(ArrayList<Player>) getIntent().getSerializableExtra("PlayerList");
+		
+		System.out.println("Tournamenet in Tournament activity:  "+PlayerList);
 	    
 	    viewPager = (ViewPager) findViewById(R.id.pager);
 	    //viewPager.setOffscreenPageLimit(0);
@@ -35,7 +46,21 @@ public class TournamentActivity extends FragmentActivity implements TabListener{
 	    
 	    viewPager.setAdapter(mAdapter);
 	    actionBar.setHomeButtonEnabled(false);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);        
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+      /* actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.circle_green));
+       actionBar.setDisplayShowTitleEnabled(true);
+       actionBar.setDisplayShowTitleEnabled(false);*/
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.rgb(26, 188, 156)));
+       
+        //viewPager.setBackgroundColor(Color.GREEN);
+        // 1. get passed intent 
+	       Intent intent = getIntent();
+	       appUser =  (Player) intent.getSerializableExtra("appUser");
+			 
+			 System.out.println(" The AppProfile Activity"+appUser.toString());
+			 System.out.println("AppUser in Tournament activity:  "+appUser);
+	       
+	
  
         // Adding Tabs
         for (String tab_name : tabs) {
@@ -43,8 +68,9 @@ public class TournamentActivity extends FragmentActivity implements TabListener{
                     .setTabListener(this));
         }
         
+        
         /**
-         * on swiping the viewpager make respective tab selected
+         * on swiping the view pager make respective tab selected
          * */
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
  
@@ -68,7 +94,9 @@ public class TournamentActivity extends FragmentActivity implements TabListener{
 		
 	}
 
-
+	public ArrayList<Player> getPlayerList() {
+		return PlayerList;
+	}
 
 
 	@Override
@@ -81,11 +109,16 @@ public class TournamentActivity extends FragmentActivity implements TabListener{
 	public void onTabSelected(Tab tab, FragmentTransaction fragmentTransaction) {
 		
 		viewPager.setCurrentItem(tab.getPosition());
+		viewPager.setBackgroundColor(Color.WHITE);
 	}
 
 	@Override
 	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
 		// TODO Auto-generated method stub
+		
+	}
+	public Player getPlayer() {
+		return appUser;
 		
 	}
 	

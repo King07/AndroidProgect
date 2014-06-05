@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical"
+    android:background="#ffffff"
+    >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="#ffffff"
     android:layout_margin="@dimen/activity_horizontal_margin">
+    <ImageButton
+        android:id="@+id/imageBtnConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@null"
+        android:layout_weight="1"
+        android:src="@drawable/circle_red" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btn_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+            style="@style/button_text"
         android:layout_weight="1"
         android:text="@string/btn_help_name" />
 
@@ -16,6 +39,8 @@
         android:id="@+id/btn_sync"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+            style="@style/button_text"
         android:layout_weight="1"
         android:text="@string/btn_sync_name" />
     
@@ -23,6 +48,8 @@
         android:id="@+id/btn_tournament"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+            style="@style/button_text"
         android:layout_weight="1"
         android:text="@string/btn_tournament_name" />
      
@@ -30,6 +57,8 @@
         android:id="@+id/btn_searchPlayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+            style="@style/button_text"
         android:layout_weight="1"
         android:text="@string/btn_searchPlayer_name" />
       
@@ -37,7 +66,10 @@
         android:id="@+id/btn_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+            style="@style/button_text"
         android:layout_weight="1"
         android:text="@string/btn_profile_name" />
+       </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
